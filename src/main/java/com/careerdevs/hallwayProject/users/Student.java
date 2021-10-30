@@ -10,13 +10,11 @@ public class Student extends User {
     private @Id @GeneratedValue Long id;
 //    private Locker locker;
 
-
     public Student(){}
 
     public Student(Long id, String firstName, String lastName, String userName) {
         super(id, firstName, lastName, userName);
     }
-
 
     @Override
     void goToLocker() {
