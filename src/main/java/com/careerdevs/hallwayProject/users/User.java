@@ -1,5 +1,7 @@
 package com.careerdevs.hallwayProject.users;
 
+
+
 public abstract class User {
     private Long id;
     private String firstName;
