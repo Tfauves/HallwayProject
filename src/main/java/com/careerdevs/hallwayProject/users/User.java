@@ -1,7 +1,7 @@
 package com.careerdevs.hallwayProject.users;
 
 public abstract class User {
-    private long id;
+    private Long id;
     private String firstName;
     private String lastName;
     private String userName;
@@ -9,7 +9,7 @@ public abstract class User {
 
     public User() {}
 
-    public User(long id, String firstName, String lastName, String userName) {
+    public User(Long id, String firstName, String lastName, String userName) {
         this.id = id;
         this.firstName = firstName;
         this.lastName = lastName;
@@ -21,11 +21,11 @@ public abstract class User {
     abstract void updateLocker();
     abstract void deleteFromLocker();
 
-    public long getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(long id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
