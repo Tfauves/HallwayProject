@@ -1,7 +1,5 @@
 package Hallway_Class;
 
-import com.careerdevs.hallwayProject.users.Student;
-
 import java.time.LocalDateTime;
 import java.util.Map;
 

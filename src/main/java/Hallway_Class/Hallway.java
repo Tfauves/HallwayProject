@@ -1,6 +1,6 @@
 package Hallway_Class;
 
-import com.careerdevs.hallwayProject.users.Student;
+import com.careerdevs.hallwayProject.models.Student;
 
 import java.util.List;
 
