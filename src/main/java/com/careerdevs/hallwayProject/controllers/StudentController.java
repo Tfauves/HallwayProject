@@ -34,5 +34,26 @@ public class StudentController {
         return new ResponseEntity<>(repository.findByCohort(cohort, Sort.by("lastName")), HttpStatus.OK);
     }
 
+    @PostMapping
+    public ResponseEntity<Student> createStudent(@RequestBody Student newStudent) {
+        return new ResponseEntity<>(repository.save(newStudent), HttpStatus.CREATED);
+    }
+
+    @PutMapping("/{id}")
+    public @ResponseBody Student updateById(@PathVariable Long id, @RequestBody Student updateData) {
+        Student student = repository.findById(id).orElseThrow(()-> new ResponseStatusException(HttpStatus.NOT_FOUND));
+        if (updateData.getFirstName() != null) student.setFirstName(updateData.getFirstName());
+        if (updateData.getLastName() != null) student.setLastName(updateData.getLastName());
+        if (updateData.getCohort() != null) student.setCohort(updateData.getCohort());
+
+        return repository.save(student);
+    }
+
+    @DeleteMapping("/{id}")
+    public ResponseEntity<String> destroyStudent(@PathVariable Long id) {
+        repository.deleteById(id);
+        return new ResponseEntity<>("Deleted", HttpStatus.OK);
+    }
+
 
 }
